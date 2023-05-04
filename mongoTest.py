@@ -2,6 +2,7 @@ import pymongo
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.figure as fig
 
 myclient = pymongo.MongoClient('mongodb://root:password@localhost:27017/')
 
@@ -53,9 +54,17 @@ if st.button('display'):
     arr = []
     for doc in nameAge:
         arr.append(doc)
-    st.write(pd.DataFrame(nameAge))
+    #st.write(pd.DataFrame(nameAge))
 
-    print('name age') 
-    print(arr)
+    data = {'names': [x['name'] for x in arr], 'ages':[x['age'] for x in arr]}
+    #print(data)
+
+    # print('name age') 
+    # print(arr)
+
+    fig, ax = plt.subplots()
+    ax.scatter(data['names'], data['ages'])
+    fig.show()
+    st.pyplot(fig)
 
 
