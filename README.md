@@ -1,6 +1,6 @@
 # Project for Professor Sopher
 
-To run, make sure python is installed, and there is an instance of MongoDB running. 
+To run, make sure python is installed, and there is an instance of MongoDB running, on my local machine I used docker for the MongoDB instance. 
 
 Activate the virtualenv with the command:
 ```shell
