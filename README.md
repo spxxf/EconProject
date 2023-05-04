@@ -17,7 +17,7 @@ If you need to change the connection string, do so in the the mongoTest.py file.
 To run mongodb locally with docker, navigate to the docker folder and:
 ```shell
 start.sh
-``
+```
 ***Note: this command only works when running bash or zsh, if using a shell such as fish, run the commands below***
 ```shell
 bash
