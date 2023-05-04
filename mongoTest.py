@@ -13,10 +13,10 @@ mycol = mydb['customers']
 #dict = {'name':'john', 'address':'highway'}
 #x = mycol.insert_one()
 
-print(myclient.list_database_names())
+# print(myclient.list_database_names())
 
-print(mycol.find_one())
-print(type(mycol.find_one()))
+# print(mycol.find_one())
+# print(type(mycol.find_one()))
 
 #df = pd.DataFrame({'names': 'john', 'address' : '24'})
 
@@ -32,9 +32,9 @@ st.write(pd.DataFrame(mycol.find({})))
 st.write(pd.DataFrame(mycol.find({}, projection = {'_id': 0})))
 
 # user inputs
-name = st.text_input('name', "Name")
-town = st.text_input('town', "Town")
-age = st.number_input('age', 0, 100)
+name = st.text_input('Name')
+town = st.text_input('Town')
+age = st.number_input('Age', 0, 100)
 st.write(name, town, age)
 
 # function to insert document into database
@@ -65,7 +65,9 @@ if st.button('display'):
 
     # make a figure and then add the plots in ax
     fig, ax = plt.subplots()
-    ax.scatter(data['names'], data['ages'])
+    #ax.scatter(data['names'], data['ages'])
+    ax.set_title('Boxplot of available ages')
+    ax.boxplot(data['ages'])
     # use streamlit to show the figure
     st.pyplot(fig)
 
